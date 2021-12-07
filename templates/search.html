@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Skan Job Search </title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+</head>
+<body>
+  <header>
+    <h1> Remote Jobs </h1>
+    <h3><b> {{number_job}} {{term}} jobs found </b></h4>
+    <h5><a href="/send?term={{term}}"> Export to CSV </a></h5>
+    <h6><a href="/" target="_self"> ← Go back </a></h6>
+  </header>
+  <main>
+    {% for x in total_job %}
+    <p>
+      <b>{{x["title"]}}</b><br><br>
+      <b>{{x["company"]}}</b><br><br>
+      <a href="{{x["link"]}}" target="_blank"> Apply </a><br><br>
+      <hr>
+    </p>
+    {% endfor %}
+  </main>
+</body>
+</html>
